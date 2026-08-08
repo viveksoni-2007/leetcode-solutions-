@@ -10,18 +10,17 @@ public:
         return ans;
     }
     int countDistinctIntegers(vector<int>& nums) {
+        unordered_set<int>s;
         int n = nums.size();
         for(int i = 0 ; i < n; i++){
-            nums.push_back(reverse(nums[i]));
+            s.insert(reverse(nums[i]));
+             s.insert(nums[i]);
         }
         // sort(nums.begin(), nums.end());
         // int distinctCount = unique(nums.begin(), nums.end()) - nums.begin();
         
         // return distinctCount;
-        unordered_set<int>s;
-        for(int i = 0 ; i <nums.size();i++){
-            s.insert(nums[i]);
-        }
+
         return s.size();
 
     }
