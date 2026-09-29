@@ -1,25 +1,34 @@
 class Solution {
 public:
-    int waviness(int x) {
-        string s = to_string(x);
+    int getWaviness(int x) {
+        vector<int> d;
 
-        int cnt = 0;
+        while(x > 0) {
+            d.push_back(x % 10);
+            x /= 10;
+        }
 
-        for (int i = 1; i < (int)s.size() - 1; i++) {
-            if ((s[i] > s[i - 1] && s[i] > s[i + 1]) ||
-                (s[i] < s[i - 1] && s[i] < s[i + 1])) {
-                cnt++;
+        reverse(d.begin(), d.end());
+
+        int count = 0;
+
+        for(int i = 1; i < d.size() - 1; i++) {
+
+            if((d[i] > d[i-1] && d[i] > d[i+1]) ||
+               (d[i] < d[i-1] && d[i] < d[i+1])) {
+                count++;
             }
         }
 
-        return cnt;
+        return count;
     }
 
     int totalWaviness(int num1, int num2) {
-        long long ans = 0;
 
-        for (int x = num1; x <= num2; x++) {
-            ans += waviness(x);
+        int ans = 0;
+
+        for(int i = num1; i <= num2; i++) {
+            ans += getWaviness(i);
         }
 
         return ans;
