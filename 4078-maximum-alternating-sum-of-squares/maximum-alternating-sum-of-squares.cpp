@@ -9,9 +9,8 @@ public:
         sort(nums.begin(), nums.end());
 
         long long ans = 0;
-        int k = n / 2;   // number of minus places
+        int k = n / 2;  
 
-        // Step 3: subtract the k smallest squares
         for (int i = 0; i < k; i++)
             ans -= nums[i];
 
