@@ -9,7 +9,7 @@ public:
             int mid = lo + (hi - lo )/2 ;
             if(nums[mid]>nums[hi]) lo = mid+1 ;
             else if (nums[mid]<nums[hi]) hi = mid ;
-            else hi--  ;
+            // else hi--  ;
         }
         return nums[lo] ;
     }
