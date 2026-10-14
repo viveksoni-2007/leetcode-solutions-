@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int minimumIndex(std::vector<int>& capacity, int itemSize) {
+    int minimumIndex(vector<int>& capacity, int itemSize) {
         int res = INT_MAX; 
         int idx = -1; 
 
